@@ -1,10 +1,19 @@
-listadecu = []
+let lista = [];
 
-let i = 0;
-while(i < 6){
-    let numeroEntreUmECem = Math.floor(Math.random() * 60) + 1;
-    listadecu.push(numeroEntreUmECem);
-    i++;
+for (let i = 0; i < 6;  i++) {
+    let umESessenta = Math.floor(Math.random() * 60) + 1;
+    let found = false;
+
+    while (!found) {
+        if (!lista.includes(umESessenta)) {
+            lista.push(umESessenta);
+            found = true;
+        } else {
+            umESessenta = Math.floor(Math.random() * 60) + 1;
+        }
+    }
+
+  
 }
 
-console.log(listadecu.join(' | '))
+console.log(lista.join(' | '));
