@@ -1,6 +1,5 @@
 const XlsxPopulate = require('xlsx-populate');
 
-
 XlsxPopulate.fromFileAsync('./megasena.xlsx')
   .then(workbook => {
 
@@ -9,15 +8,16 @@ XlsxPopulate.fromFileAsync('./megasena.xlsx')
     const usedRange = sheet.usedRange();
 
     const rowCount = usedRange.endCell().rowNumber();
-    const columnCount = usedRange.endCell().columnNumber();
 
-    for (let row = 1; row <= rowCount; row++) {
-      for (let col = 1; col <= columnCount; col++) {
+   
+    const columnH = 'H'.charCodeAt(0) - 'A'.charCodeAt(0) + 1;
+
+    for (let row = 8; row <= rowCount; row++) {
+      let rowData = ''; 
+      for (let col = 1; col <= columnH; col++) { 
         const cellValue = sheet.cell(row, col).value();
-        console.log(`Célula (${row}, ${col}): ${cellValue}`);
+        rowData += `${cellValue}\t`; 
       }
+      console.log(rowData.trim()); 
     }
-  })
-  .catch(error => {
-    console.error('Erro ao carregar o arquivo:', error);
-  });
+})

@@ -1,6 +1,6 @@
-let dados = 28;
+let dados = 10;
  
-let sorteio = dados + 8;
+let sorteio = dados + 7;
 
 let mostrar = 'A8:H'+sorteio;
 

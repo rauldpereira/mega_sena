@@ -1,6 +1,6 @@
 let lista = [];
 
-for (let i = 0; i < 6;  i++) {
+for (let i = 0; i < 6;  ++i) {
     let umESessenta = Math.floor(Math.random() * 60) + 1;
     let found = false;
 
